@@ -13,7 +13,7 @@ The CloudBees CD/RO GitHub Actions are called from _steps_ in a GitHub Actions _
 ```yaml
 steps:
   - name: Run Pipeline Action
-    uses: cloudbees/cdro-actions/run-pipeline@main
+    uses: cloudbees-actions/run-pipeline@main
     env:
       CDRO_URL: ${{ secrets.CDRO_URL }}
       CDRO_TOKEN: ${{ secrets.CDRO_TOKEN }}
@@ -70,12 +70,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create pipeline
-        uses: cloudbees/cdro-actions/eval-dsl@main
+        uses: cloudbees-actions/eval-dsl@main
         with:
           dsl-file: simple-pipeline-dsl.groovy
 
       - name: Run pipeline
-        uses: cloudbees/cdro-actions/run-pipeline@main
+        uses: cloudbees-actions/run-pipeline@main
         with:
           projectName: Default
           pipelineName: My simple pipeline
