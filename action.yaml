@@ -17,7 +17,7 @@ runs:
   steps:
     - name: runPipeline API
       id: run-pipeline
-      uses: cloudbees-actions/eval-dsl@v1
+      uses: cloudbees-github-actions/eval-dsl@v1
       with:
         dsl: runPipeline args
         dsl-args: |
@@ -26,7 +26,7 @@ runs:
         dsl-actual-parameter: ${{ inputs.actualParameter }}
             
     - name: Attach action meta data to runtime object
-      uses: cloudbees-actions/eval-dsl@v1
+      uses: cloudbees-github-actions/eval-dsl@v1
       with:
         dsl: |
           def flowRuntimeId = "${{ fromJson(steps.run-pipeline.outputs.response).flowRuntime.flowRuntimeId }}"
